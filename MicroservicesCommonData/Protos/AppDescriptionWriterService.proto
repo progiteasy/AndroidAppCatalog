@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "MicroservicesCommonData";
+
+service AppDescriptionWriter {
+  rpc PostData (AppDescriptionWriterPostRequest) returns (AppDescriptionWriterPostReply);
+}
+
+message AppDescriptionWriterPostRequest {
+  string appPackageName = 1;
+}
+
+message AppDescriptionWriterPostReply {
+  bool isOperationSuccessful = 1;
+  bool isRequestArgumentValid = 2;
+}
